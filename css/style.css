@@ -1,11 +1,213 @@
-/* variaveis */
-
 /* fontes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* variaveis */
+:root {
+    --cor-fundo: #0d1117;
+    --cor-cartao: #161b22;
+    --cor-saldo-fundo: #0a2e1f;
+    --cor-texto-principal: #e6edf3;
+    --cor-texto-secundario: #8b949e;
+    --cor-positivo: #3fb950;
+    --cor-destaque: #2ea043;
+    --raio-borda: 16px;
+}
 
 /* reset */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family:'Montserrat', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal)
+}
 
 /* estilos básicos */
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    
+    /* Recurso do Flexbox que pode ser utilizado para alinhar um texto no centro de um ícone: */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.cartao-saldo {
+    background-color: var(--cor-saldo-fundo);
+    color: #fff;
+    border-radius: var(--raio-borda);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.cartao-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.valor {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.badge  {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+.carteira-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.lista-investimentos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-investimentos {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--cor-fundo);
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-icone {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+    flex-shrink: 0;
+}
+
 
 /* mobile */
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    background-color: var(--cor-cartao);
+}
+
+.conteudo-principal {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 20px;
+}
+
+.menu {
+    flex-shrink: 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 16px 12px;
+    background-color: var(--cor-cartao);
+    border-top: 1px solid #e5e5e5;
+}
+
+.menu button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: var(--cor-texto-secundario);
+    cursor: pointer;
+}
 
 /* outras tamanhos */
+@media (min-width: 769px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    }
+
+    .app {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        height: auto;
+        max-width: 650px;
+        max-height: 85vh;
+        border-radius: var(--raio-borda);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .menu {
+        order: -1;
+        border-right: 1px solid #eee;
+        padding: 24px 16px;
+    }
+
+    .menu ul {
+        grid-template-columns: 1fr;
+        background: none;
+        border-top: none;
+        padding: 0;
+    }
+
+    .menu button {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .lista-investimentos {
+        flex-direction: row;
+    }
+}
