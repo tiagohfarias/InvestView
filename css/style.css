@@ -217,6 +217,18 @@ body {
     }
 
     .item-investimentos {
-        min-width: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .item-info {
+        flex: initial;
+    }
+
+    .item-valores {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
     }
 }
